@@ -11,7 +11,7 @@ class PerguntasApp extends StatelessWidget {
 
   void _responder() {
     _perguntaSelecionada++;
-    print(_perguntaSelecionada);
+    //print(_perguntaSelecionada);
   }
 
   @override
