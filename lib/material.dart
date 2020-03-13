@@ -8,7 +8,12 @@ class MyMaterial extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Perguntas & Resposta',
       theme: ThemeData(primaryColor: Colors.purpleAccent),
-      // home: , Instanciar a class com a estrutura do layout
+       home: Scaffold(
+         appBar: AppBar(
+           title: Text('Perguntas & Resposta'),
+           centerTitle: true,
+         ),
+       ), //Instanciar a class com a estrutura do layout
     );
   }
 }
