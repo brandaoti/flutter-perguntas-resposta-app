@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perguntas_resposta_app/perguntas.dart';
 
 class MyMaterial extends StatelessWidget {
   @override
@@ -8,12 +9,7 @@ class MyMaterial extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Perguntas & Resposta',
       theme: ThemeData(primaryColor: Colors.purpleAccent),
-       home: Scaffold(
-         appBar: AppBar(
-           title: Text('Perguntas & Resposta'),
-           centerTitle: true,
-         ),
-       ), //Instanciar a class com a estrutura do layout
+      home: PerguntasApp(), //Instanciar a class com a estrutura do layout
     );
   }
 }
