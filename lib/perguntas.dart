@@ -20,30 +20,32 @@ class PerguntasAppState extends State<PerguntasApp> {
   }
 
   // Função responsavel por resetar
-  void _resetar(){
+  void _resetar() {}
 
+  // Metodo para validação
+  bool get temPergunta {
+    return _perguntaSelecionada < _perguntas.length;
   }
-
 
   @override
   Widget build(BuildContext context) {
     // implement build Scaffold
-
-  
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Perguntas & Resposta'),
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Questao(_perguntas[_perguntaSelecionada]),
-          Resposta('resposta 1', _responder),
-          Resposta('resposta 2', _responder),
-          Resposta('resposta 2', _responder),
-        ],
-      ),
+      body: temPergunta
+          ? Column(
+              children: <Widget>[
+                Questao(_perguntas[_perguntaSelecionada]),
+                Resposta('resposta 1', _responder),
+                Resposta('resposta 2', _responder),
+                Resposta('resposta 2', _responder),
+              ],
+            )
+          : Text('Parabéns!'),
     );
   }
 }
