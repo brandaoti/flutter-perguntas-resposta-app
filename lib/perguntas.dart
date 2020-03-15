@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import './questionario.dart';
+import './resultado.dart';
 
 class PerguntasAppState extends State<PerguntasApp> {
   var _perguntaSelecionada = 0;
+  var _pontuacaoFinal = 0;
 
   final List<Map<String, Object>> _perguntas = const [
     {
@@ -35,10 +37,11 @@ class PerguntasAppState extends State<PerguntasApp> {
   ];
 
   // Função para chamar ativar no botão! #Resposta
-  void _responder(int) {
+  void _responder(int pontos) {
     if (temPergunta) {
       setState(() {
         _perguntaSelecionada++;
+        _pontuacaoFinal += pontos;
       });
     }
   }
@@ -66,7 +69,7 @@ class PerguntasAppState extends State<PerguntasApp> {
               perguntaSelecionada: _perguntaSelecionada,
               onResponder: _responder,
             )
-          : Text('Parabéns!'),
+          : Resultado(_pontuacaoFinal, _resetar),
     );
   }
 }
