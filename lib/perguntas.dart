@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './questao.dart';
+import './resposta.dart';
 
 class PerguntasAppState extends State<PerguntasApp> {
   var _perguntaSelecionada = 0;
@@ -10,6 +11,7 @@ class PerguntasAppState extends State<PerguntasApp> {
     'Qual sua musica favorita?',
   ];
 
+  // Função para chamar ativar no botão! #Resposta
   void _responder() {
     setState(() {
       _perguntaSelecionada++;
@@ -17,9 +19,18 @@ class PerguntasAppState extends State<PerguntasApp> {
     //print(_perguntaSelecionada);
   }
 
+  // Função responsavel por resetar
+  void _resetar(){
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // implement build Scaffold
+
+  
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Perguntas & Resposta'),
@@ -28,9 +39,9 @@ class PerguntasAppState extends State<PerguntasApp> {
       body: Column(
         children: <Widget>[
           Questao(_perguntas[_perguntaSelecionada]),
-          RaisedButton(child: Text('Resposta #1'), onPressed: _responder),
-          RaisedButton(child: Text('Resposta #2'), onPressed: _responder),
-          RaisedButton(child: Text('Resposta #4'), onPressed: _responder),
+          Resposta('resposta 1', _responder),
+          Resposta('resposta 2', _responder),
+          Resposta('resposta 2', _responder),
         ],
       ),
     );
