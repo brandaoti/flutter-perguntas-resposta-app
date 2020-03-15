@@ -12,9 +12,15 @@ class Resposta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // implement build RaisedButton,
-    return RaisedButton(
-      child: Text(resposta),
-      onPressed: responder,
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.only(left: 10, right: 10),
+      child: RaisedButton(
+        onPressed: responder,
+        child: Text(resposta),
+        textColor: Colors.white,
+        color: Theme.of(context).primaryColor,
+      ),
     );
   }
 }

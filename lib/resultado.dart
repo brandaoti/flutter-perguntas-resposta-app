@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 class Resultado extends StatelessWidget {
-  final int pontos;
+  final int pontuacao;
   final Function() onResetar;
 
-  Resultado(this.pontos, this.onResetar);
+  Resultado(this.pontuacao, this.onResetar);
 
   String get resultado {
-    if (pontos < 4) {
-      return 'Um pouco ruim!';
-    } else if (pontos < 8) {
-      return 'Bem melhor!';
-    } else if (pontos < 12) {
-      return 'Muito bom!';
+    if (pontuacao < 8) {
+      return 'Um pouco ruim! $pontuacao';
+    } else if (pontuacao < 12) {
+      return 'Bem melhor! $pontuacao';
+    } else if (pontuacao < 16) {
+      return 'Muito bom! $pontuacao';
     } else {
-      return 'Parabéns!';
+      return 'Parabéns! $pontuacao';
     }
   }
 

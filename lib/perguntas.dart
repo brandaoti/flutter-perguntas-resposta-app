@@ -10,28 +10,28 @@ class PerguntasAppState extends State<PerguntasApp> {
     {
       'pergunta': 'Qual sua cor favorita?',
       'respostas': [
-        {'respValue': 'Vermelho', 'value': 8},
-        {'respValue': 'Azul', 'value': 6},
-        {'respValue': 'Verde', 'value': 4},
-        {'respValue': 'Branco', 'value': 2},
+        {'respValue': 'Vermelho', 'value': 6},
+        {'respValue': 'Azul', 'value': 4},
+        {'respValue': 'Verde', 'value': 2},
+        {'respValue': 'Branco', 'value': 1},
       ]
     },
     {
       'pergunta': 'Qual sua comida favorita?',
       'respostas': [
-        {'respValue': 'Arroz', 'value': 8},
-        {'respValue': 'Feijão', 'value': 6},
-        {'respValue': 'Macarrão', 'value': 4},
-        {'respValue': 'Cuscuz', 'value': 2},
+        {'respValue': 'Arroz', 'value': 6},
+        {'respValue': 'Feijão', 'value': 4},
+        {'respValue': 'Macarrão', 'value': 2},
+        {'respValue': 'Cuscuz', 'value': 1},
       ]
     },
     {
       'pergunta': 'Qual sua musica favorita?',
       'respostas': [
-        {'respValue': 'Gospel', 'value': 8},
-        {'respValue': 'Romantica', 'value': 6},
-        {'respValue': 'Sertanejo', 'value': 4},
-        {'respValue': 'Pop', 'value': 2},
+        {'respValue': 'Gospel', 'value': 6},
+        {'respValue': 'Romantica', 'value': 4},
+        {'respValue': 'Sertanejo', 'value': 2},
+        {'respValue': 'Pop', 'value': 1},
       ]
     }
   ];
@@ -43,6 +43,8 @@ class PerguntasAppState extends State<PerguntasApp> {
         _perguntaSelecionada++;
         _pontuacaoFinal += pontos;
       });
+      print(_pontuacaoFinal);
+      print(pontos);
     }
   }
 
