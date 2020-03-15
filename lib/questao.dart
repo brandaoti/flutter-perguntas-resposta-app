@@ -12,10 +12,12 @@ class Questao extends StatelessWidget {
     // implement build Questão
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.all(20),
       child: Text(
         questao,
-        style: TextStyle(fontSize: 28),
+        style: TextStyle(fontSize: 28,
+        color: Colors.green[800]
+        ),
         textAlign: TextAlign.center,
       ),
     );
