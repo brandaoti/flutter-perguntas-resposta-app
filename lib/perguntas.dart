@@ -5,10 +5,34 @@ import './resposta.dart';
 class PerguntasAppState extends State<PerguntasApp> {
   var _perguntaSelecionada = 0;
 
-  final List<String> _perguntas = [
-    'Qual sua cor favorita?',
-    'Qual sua comida favorita?',
-    'Qual sua musica favorita?',
+  final List<Map<String, Object>> _perguntas = const [
+    {
+      'perguntas': 'Qual sua cor favorita?',
+      'resposta': {
+        'Vermelho',
+        'Azul',
+        'Verde',
+        'Branco',
+      },
+    },
+    {
+      'perguntas': 'Qual sua comida favorita?',
+      'resposta': {
+        'Arroz',
+        'Feijão',
+        'Macarrão',
+        'Cuscuz',
+      }
+    },
+    {
+      'perguntas': 'Qual sua musica favorita?',
+      'resposta': {
+        'Gospel',
+        'Romantica',
+        'Sertanejo',
+        'Pop',
+      }
+    }
   ];
 
   // Função para chamar ativar no botão! #Resposta
@@ -16,7 +40,6 @@ class PerguntasAppState extends State<PerguntasApp> {
     setState(() {
       _perguntaSelecionada++;
     });
-    //print(_perguntaSelecionada);
   }
 
   // Função responsavel por resetar
@@ -39,7 +62,7 @@ class PerguntasAppState extends State<PerguntasApp> {
       body: temPergunta
           ? Column(
               children: <Widget>[
-                Questao(_perguntas[_perguntaSelecionada]),
+                Questao(_perguntas[_perguntaSelecionada]['perguntas']),
                 Resposta('resposta 1', _responder),
                 Resposta('resposta 2', _responder),
                 Resposta('resposta 2', _responder),
