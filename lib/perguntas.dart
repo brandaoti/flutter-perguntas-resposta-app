@@ -47,7 +47,12 @@ class PerguntasAppState extends State<PerguntasApp> {
   }
 
   // Função responsavel por resetar
-  void _resetar() {}
+  void _resetar() {
+    setState(() {
+      _perguntaSelecionada = 0;
+      _pontuacaoFinal = 0;
+    });
+  }
 
   // Metodo para validação
   bool get temPergunta {
