@@ -11,6 +11,7 @@ class PerguntasAppState extends State<PerguntasApp> {
     'Qual sua musica favorita?',
   ];
 
+  // Função para chamar ativar no botão! #Resposta
   void _responder() {
     setState(() {
       _perguntaSelecionada++;
@@ -18,9 +19,18 @@ class PerguntasAppState extends State<PerguntasApp> {
     //print(_perguntaSelecionada);
   }
 
+  // Função responsavel por resetar
+  void _resetar(){
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // implement build Scaffold
+
+  
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Perguntas & Resposta'),
