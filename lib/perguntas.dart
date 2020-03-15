@@ -1,45 +1,46 @@
 import 'package:flutter/material.dart';
-import './questao.dart';
-import './resposta.dart';
+import './questionario.dart';
 
 class PerguntasAppState extends State<PerguntasApp> {
   var _perguntaSelecionada = 0;
 
   final List<Map<String, Object>> _perguntas = const [
     {
-      'perguntas': 'Qual sua cor favorita?',
-      'resposta': {
-        'Vermelho',
-        'Azul',
-        'Verde',
-        'Branco',
-      },
+      'pergunta': 'Qual sua cor favorita?',
+      'respostas': [
+        {'respValue': 'Vermelho', 'value': 8},
+        {'respValue': 'Azul', 'value': 6},
+        {'respValue': 'Verde', 'value': 4},
+        {'respValue': 'Branco', 'value': 2},
+      ]
     },
     {
-      'perguntas': 'Qual sua comida favorita?',
-      'resposta': {
-        'Arroz',
-        'Feijão',
-        'Macarrão',
-        'Cuscuz',
-      }
+      'pergunta': 'Qual sua comida favorita?',
+      'respostas': [
+        {'respValue': 'Arroz', 'value': 8},
+        {'respValue': 'Feijão', 'value': 6},
+        {'respValue': 'Macarrão', 'value': 4},
+        {'respValue': 'Cuscuz', 'value': 2},
+      ]
     },
     {
-      'perguntas': 'Qual sua musica favorita?',
-      'resposta': {
-        'Gospel',
-        'Romantica',
-        'Sertanejo',
-        'Pop',
-      }
+      'pergunta': 'Qual sua musica favorita?',
+      'respostas': [
+        {'respValue': 'Gospel', 'value': 8},
+        {'respValue': 'Romantica', 'value': 6},
+        {'respValue': 'Sertanejo', 'value': 4},
+        {'respValue': 'Pop', 'value': 2},
+      ]
     }
   ];
 
   // Função para chamar ativar no botão! #Resposta
-  void _responder() {
-    setState(() {
-      _perguntaSelecionada++;
-    });
+  void _responder(int) {
+    if (temPergunta) {
+      setState(() {
+        _perguntaSelecionada++;
+      });
+    }
   }
 
   // Função responsavel por resetar
@@ -60,13 +61,10 @@ class PerguntasAppState extends State<PerguntasApp> {
         centerTitle: true,
       ),
       body: temPergunta
-          ? Column(
-              children: <Widget>[
-                Questao(_perguntas[_perguntaSelecionada]['perguntas']),
-                Resposta('resposta 1', _responder),
-                Resposta('resposta 2', _responder),
-                Resposta('resposta 2', _responder),
-              ],
+          ? Questionario(
+              perguntas: _perguntas,
+              perguntaSelecionada: _perguntaSelecionada,
+              onResponder: _responder,
             )
           : Text('Parabéns!'),
     );
